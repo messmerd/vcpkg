@@ -5,6 +5,8 @@ vcpkg_from_gitlab(
     REF "v${VERSION}"
     SHA512 add394bdf6453c9e33e73c2ffe3074f0fddfb067351ff6f0242d1ce5219c212398531c979d952a48c14a13efb3114d4314b553e20689435626b36af8a3c8c56c
     HEAD_REF master
+    PATCHES
+        fix-windows-default-lv2-path.patch
 )
 
 set(options "")
