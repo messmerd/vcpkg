@@ -1,8 +1,8 @@
 diff --git a/meson.build b/meson.build
-index d5bc4e9..bd92910 100644
+index d208cc7..5d9b399 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -185,7 +185,7 @@ if default_lv2_path == ''
+@@ -187,7 +187,7 @@ if default_lv2_path == ''
      default_lv2_path = ':'.join(['~/.lv2', '/boot/common/add-ons/lv2'])
  
    elif host_machine.system() == 'windows'
