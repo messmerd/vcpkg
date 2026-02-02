@@ -1,13 +1,17 @@
 diff --git a/meson.build b/meson.build
-index d208cc7..5d9b399 100644
+index d208cc7..d562a01 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -187,7 +187,7 @@ if default_lv2_path == ''
+@@ -187,7 +187,11 @@ if default_lv2_path == ''
      default_lv2_path = ':'.join(['~/.lv2', '/boot/common/add-ons/lv2'])
- 
+
    elif host_machine.system() == 'windows'
 -    lv2_dirs = ['%%APPDATA%%\\\\LV2', '%%COMMONPROGRAMFILES%%\\\\LV2']
-+    lv2_dirs = ['%APPDATA%\\\\LV2', '%COMMONPROGRAMFILES%\\\\LV2']
++    if build_machine.system() == 'windows'
++      lv2_dirs = ['%%APPDATA%%\\\\LV2', '%%COMMONPROGRAMFILES%%\\\\LV2']
++    else
++      lv2_dirs = ['%APPDATA%\\\\LV2', '%COMMONPROGRAMFILES%\\\\LV2']
++    endif
      default_lv2_path = ';'.join(lv2_dirs)
- 
+
    else
